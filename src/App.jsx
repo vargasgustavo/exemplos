@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-import "./styles.css";
+import "./calculator.css";
 
-import { SelectEstado } from "./components/SelectEstado";
-import { SelectCidade } from "./components/SelectCidade";
+import { SelectEstado, SelectCidade } from "./pages/selects/index";
 
 export default function App() {
   const [selectedUf, setSelectedUf] = useState("");
