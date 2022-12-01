@@ -9,6 +9,7 @@ export default function Calc() {
         <div className="App">
             <h1>Calculadora simples - React</h1>
             <div className="calc-wrapper"></div>
+            
         </div>
     )
 }
