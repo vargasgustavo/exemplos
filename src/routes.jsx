@@ -1,42 +1,40 @@
+import React from "react";
+
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import App from "./App";
-import NavBar from "./navbar";
+import ResponsiveAppBar from "./navbar";
 import Calc from "./pages/calc";
 import { SelectCidade, SelectEstado } from "./pages/selects";
 
 export default function Routes() {
 
-  function Father() {
-    
-  }
+  const [selectedUf, setSelectedUf] = React.useState("");
 
   const router = createBrowserRouter([
     {
       path: "/home",
       element: (
-        <Father>
-          <NavBar />
-          <App />
-        </Father>
+        <>
+          <ResponsiveAppBar />
+        </>
       ),
     },
     {
       path: "/selects",
       element: (
-        <Father>
-          <NavBar />
-          <SelectCidade />
-          <SelectEstado />
-        </Father>
+        <>
+          <ResponsiveAppBar />
+          <SelectEstado onChange={setSelectedUf}/>
+          <SelectCidade uf={selectedUf}/>
+        </>
       ),
     },
     {
       path: "/calc",
       element: (
-        <Father>
-          <NavBar />
+        <>
+          <ResponsiveAppBar />
           <Calc />
-        </Father>
+        </>
       ),
     },
   ]);

@@ -1,9 +1,0 @@
-{
-  "STATIC_NAVBAR_BUTTONS": {
-    "DEFAULT": [
-      { "NAME": "HOME", "URL": "/home" },
-      { "NAME": "SELECTS", "URL": "/selects" },
-      { "NAME": "CALCULATOR", "URL": "/calc" }
-    ]
-  }
-}
