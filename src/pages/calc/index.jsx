@@ -35,9 +35,9 @@ export default function Calc() {
         <div className="App">
             <h1>Calculadora simples - React</h1>
             <div className="calc-wrapper">
-                <Input type="text" onChange={insereNum}/>
-                <Input type="radio" onChange={insereOperacao}/>
-                <Input type="text" onChange={insereNum}/>
+                <Input onChange={insereNum}/>
+                <Input onChange={insereOperacao}/>
+                <Input onChange={insereNum}/>
                 <Button onClick={calcular}>Calcular</Button>
             </div>
         </div>

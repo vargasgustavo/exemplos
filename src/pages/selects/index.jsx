@@ -1,6 +1,6 @@
 import Select from "react-select";
-import { useCidades } from "../../hooks/useCidades";
-import { useEstados } from "../../hooks/useEstados";
+import { useCidades } from "./useCidades";
+import { useEstados } from "./useEstados";
 import { useState } from "react";
 
 import { Body } from "./styles";
