@@ -3,6 +3,8 @@ import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ResponsiveAppBar from "./navbar";
 import Calc from "./pages/calc";
+import CheckBox from "./pages/checkbox";
+import SelectDate from "./pages/selecao-data";
 import { SelectCidade, SelectEstado } from "./pages/selects";
 
 export default function Routes() {
@@ -37,6 +39,24 @@ export default function Routes() {
         </>
       ),
     },
+    {
+      path: "/checkbox",
+      element: (
+        <>
+          <ResponsiveAppBar />
+          <CheckBox />
+        </>
+      )
+    },
+    {
+      path: "select-date",
+      element: (
+        <>
+          <ResponsiveAppBar />
+          <SelectDate />
+        </>
+      )
+    }
   ]);
 
   return <RouterProvider router={router} />;
