@@ -30,3 +30,8 @@ export const Button = styled(NavLink)`
     color: var(--smashed-pumpkin);
   }
 `;
+
+export const NavBar = styled.div`
+  margin: 0;
+  padding: 0;
+`
