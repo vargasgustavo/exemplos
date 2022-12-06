@@ -13,6 +13,14 @@ export default function Routes() {
 
   const router = createBrowserRouter([
     {
+      path: "/",
+      element: (
+        <>
+          <ResponsiveAppBar />
+        </>
+      )
+    },
+    {
       path: "/home",
       element: (
         <>
@@ -31,7 +39,7 @@ export default function Routes() {
       ),
     },
     {
-      path: "/calc",
+      path: "/calculator",
       element: (
         <>
           <ResponsiveAppBar />

@@ -1,44 +1,34 @@
-import React, { useState } from 'react';
-import Button from '@mui/material/Button'
-import * as math from 'mathjs';
-
-const arrOperacoes = ["*", "/", "+", ".", "-"];
+import React from "react";
 
 export default function Calc() {
-
-    const [Input, setInput] = useState();
-    function insereNum(val) {
-        setInput(Input + val);
+  let botao = document.getElementsByClassName("mybutton")[0];
+  botao.onclick = function (e) {
+    let num1 = Number(document.getElementById("num1").value);
+    let num2 = Number(document.getElementById("num2").value);
+    let oper = document.getElementById("oper").value;
+    if (oper === "+") {
+      alert(num1 + num2);
+    } else if (oper === "-") {
+      alert(num1 - num2);
+    } else if (oper === "/") {
+      alert(num1 / num2);
+    } else if (oper === "*") {
+      alert(num1 * num2);
+    } else {
+      alert("operação inválida");
     }
-    function insereOperacao(val) {
-        if (
-            Input === "" || 
-            (arrOperacoes.includes(Input[Input.length - 1]) && 
-            arrOperacoes.includes(val))
-        ) {
-            return;
-        } else {
-            setInput(Input + val);
-        }
-    };
+    e.preventDefault();
+  };
 
-    function calcular() {
-        if (Input === "" || arrOperacoes.includes(Input[Input.length - 1])) {
-            return Input;
-        } else {
-            setInput(math.evaluate(Input));
-        }
-    }
-
-    return (
-        <div className="App">
-            <h1>Calculadora simples - React</h1>
-            <div className="calc-wrapper">
-                <Input onChange={insereNum}/>
-                <Input onChange={insereOperacao}/>
-                <Input onChange={insereNum}/>
-                <Button onClick={calcular}>Calcular</Button>
-            </div>
-        </div>
-    )
+  return (
+    <div className="App">
+      <h1>Calculadora simples - React</h1>
+        <form action="#">
+            <input type="text" placeholder="Digite o primeiro numero" id="num1" />
+            <input type="text" placeholder="Digite o segundo numero" id="num2" />
+            <input type="text" placeholder= "Digite a operação + - / * " id="oper" />
+            <button className="mybutton"> Calcular </button>
+        </form>
+    </div>
+  );
 }

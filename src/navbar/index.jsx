@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 
 const pages = [
   { nome: "Selects", url: "/selects" },
-  { nome: "Calc", url: "/calc" },
+  { nome: "Calc", url: "/calculator" },
   { nome: "Select Date", url: "/select-date" },
   { nome: "Checkbox", url: "/checkbox" },
 ];
