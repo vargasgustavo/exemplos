@@ -1,0 +1,34 @@
+body {
+    font-family: sans-serif;
+}
+
+.questao {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.questao h3 {
+    margin-right: 10px;
+}
+
+.escola {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.escola input {
+    width: 330px;
+    height: 30px;
+    letter-spacing: 1px;
+    outline: none;
+    border-radius: 5px;
+}
+
+.escola input::placeholder {
+    font-family: sans-serif;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
