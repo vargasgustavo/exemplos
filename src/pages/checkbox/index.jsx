@@ -5,7 +5,7 @@ const CheckBox = () => {
 
     function Show() {
         var obj = document.getElementById("check").checked;
-        if (obj = true) {
+        if (obj == true) {
             return document.getElementById("escondido").hidden = false;
         } else {
             return document.getElementById("escondido").hidden = true;
