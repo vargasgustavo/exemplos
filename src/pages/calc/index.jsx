@@ -1,39 +1,42 @@
-import React from "react";
-
-function Calcular() {
-  let num1 = Number(document.getElementById("num1"));
-  let num2 = Number(document.getElementById("num2"));
-  let oper = document.getElementById("oper");
-  if (oper === "+") {
-    alert(num1 + num2);
-  } else if (oper === "-") {
-    alert(num1 - num2);
-  } else if (oper === "/") {
-    alert(num1 / num2);
-  } else if (oper === "*") {
-    alert(num1 * num2);
-  } else {
-  }
-  console.log(num1 + num2);
-  return (
-    <div className="App">
-      <h1>Calculadora simples - React</h1>
-      <form action="#">
-        <input type="text" placeholder="Digite o primeiro numero" id="num1" /><br/><br/>
-        <input type="text" placeholder="Digite o segundo numero" id="num2" /><br/><br/>
-        <select>
-          <option id="soma">Soma</option>
-          <option id="sub">Subtração</option>
-          <option id="multi">Multiplicação</option>
-          <option id="div">Divisão</option>
-        </select>
-        <br/><br/>
-        <button id="btn" onClick={Calcular}>
-          Calcular
-        </button>
-      </form>
-    </div>
-  );
+import React, { useEffect, useState } from "react";
+ 
+function Calculadora() {
+    const [num1,setNum1] = useState()
+    const [num2,setNum2] = useState()
+    const [operador,setOperador] = useState()
+    const [total,setTotal] = useState()
+ 
+ 
+    useEffect(() => {
+        if (operador === "+") {
+            setTotal(Number(num1) + Number(num2));
+        }
+        else if (operador === "-") {
+            setTotal(num1 - num2);
+        }
+        else if (operador === "/") {
+            setTotal(num1 / num2);
+        }
+        else if (operador === "*") {
+            setTotal(num1 * num2);
+        }
+        }, [num1,num2,operador])
+ 
+    return (
+        <div style={{"marginleft":"10px"}}>
+            <h1>Calculadora simples</h1>
+                <input type="text" placeholder="Digite o primeiro numero" onChange={(event)=> setNum1(event.target.value)}/><br /><br />
+                <input type="text" placeholder="Digite o segundo numero"  onChange={(event)=> setNum2(event.target.value)} /><br /><br />
+                <div onChange={event => setOperador(event.target.value)}>
+                    <input type="radio" value='+' name="r"/>Somar
+                    <input type="radio" value='-' name="r"/>Subtrair
+                    <input type="radio" value='*' name="r"/>Multiplicar
+                    <input type="radio" value='/' name="r"/>Dividir
+                </div>
+                <h3>{total}</h3><br /><br />
+        </div>
+    );
+ 
 }
-
-export default Calcular;
+ 
+export default Calculadora;
